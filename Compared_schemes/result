@@ -1,0 +1,112 @@
+Gen hash for all frames:
+
+dataset1
+extend---compare all
+Get info for videolevel
+AUC: 0.935
+best threshold 2.5
+Precision=87.38%
+Recall=100.00%
+F1=93.26%
+IoU=87.38%
+Accuracy=91.33%
+Get info for framelevel
+AUC: 0.7863502771667511
+best threshold 1.5
+Precision=59.50%
+Recall=62.12%
+F1=60.78%
+IoU=43.66%
+Accuracy=87.32%
+
+extend---compare segment
+AUC: 0.5205875855975259
+best threshold 0.5
+Precision=53.77%
+Recall=15.61%
+F1=24.19%
+IoU=13.76%
+Accuracy=54.78%
+
+dataset4
+extend---compare all
+Get info for videolevel
+AUC: 0.87451171875
+best threshold 30.5
+Precision=90.06%
+Recall=96.25%
+F1=93.05%
+IoU=87.01%
+Accuracy=91.02%
+Get info for framelevel
+AUC: 0.8320832940634886
+best threshold 4.5
+Precision=45.29%
+Recall=85.67%
+F1=59.26%
+IoU=42.10%
+Accuracy=77.58%
+extend---compare segment
+Get info for framelevel
+AUC: 0.6577856289840819
+best threshold 3.5
+Precision=30.57%
+Recall=62.12%
+F1=40.98%
+IoU=25.77%
+Accuracy=65.27%
+
+sample 5
+
+dataset4
+
+Get info for videolevel
+AUC: 0.7296875
+best threshold 16.5
+Precision=87.29%
+Recall=64.38%
+F1=74.10%
+IoU=58.86%
+Accuracy=71.88%
+Get info for framelevel
+AUC: 0.679340987772557
+best threshold 2.5
+Precision=36.13%
+Recall=58.13%
+F1=44.56%
+IoU=28.67%
+Accuracy=72.48%
+
+
+
+frame all-no segment
+
+dataset 4
+Get info for videolevel
+AUC: 0.86220703125
+best threshold 72.5
+Precision=88.40%
+Recall=100.00%
+F1=93.84%
+IoU=88.40%
+Accuracy=91.80%
+Get info for framelevel
+AUC: 0.8565376193931682
+best threshold 9.5
+Precision=44.49%
+Recall=89.22%
+F1=59.38%
+IoU=42.22%
+Accuracy=76.77%
+
+
+best threshold 50
+Precision=89.33%
+Recall=99.38%
+F1=94.08%
+IoU=88.83%
+best threshold 6
+Precision=65.63%
+Recall=86.60%
+F1=74.67%
+IoU=59.58%

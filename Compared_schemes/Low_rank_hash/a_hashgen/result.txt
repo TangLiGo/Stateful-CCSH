@@ -1,0 +1,34 @@
+Authenticate for dataset 1
+Get info for videolevel
+AUC: 0.30183333333333334
+best threshold 0.0
+Precision=62.50%
+Recall=100.00%
+F1=76.92%
+IoU=62.50%
+Accuracy=62.50%
+Get info for framelevel
+AUC: 0.5120428266415262
+best threshold 0.0
+Precision=47.00%
+Recall=77.81%
+F1=58.60%
+IoU=41.44%
+Accuracy=49.41%
+Authenticate for dataset 4
+Get info for videolevel
+AUC: 0.26484375
+best threshold 0.0
+Precision=58.67%
+Recall=82.50%
+F1=68.57%
+IoU=52.17%
+Accuracy=52.73%
+Get info for framelevel
+AUC: 0.518801702155349
+best threshold 0.0
+Precision=34.54%
+Recall=80.92%
+F1=48.42%
+IoU=31.94%
+Accuracy=41.63%

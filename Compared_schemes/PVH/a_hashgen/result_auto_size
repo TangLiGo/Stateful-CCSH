@@ -1,0 +1,37 @@
+block num horizontally=20
+dataset1:
+Get info for videolevel
+AUC: 0.9325
+best threshold 2.5
+Precision=87.38%
+Recall=100.00%
+F1=93.26%
+IoU=87.38%
+Accuracy=91.33%
+Get info for framelevel
+AUC: 0.7272270980198734
+best threshold 1.5
+Precision=50.14%
+Recall=50.80%
+F1=50.47%
+IoU=33.75%
+Accuracy=86.81%
+dataset4:
+
+block num
+
+AUC: 0.87451171875
+best threshold 30.5
+Precision=90.06%
+Recall=96.25%
+F1=93.05%
+IoU=87.01%
+Accuracy=91.02%
+Get info for framelevel
+AUC: 0.4783614303486631
+best threshold 380.5
+Precision=45.24%
+Recall=0.76%
+F1=1.50%
+IoU=0.76%
+Accuracy=69.65%

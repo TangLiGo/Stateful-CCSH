@@ -1,0 +1,9 @@
+.ipynb_checkpoints
+__pycache__
+.vscode
+.pytest_cache
+.devcontainer
+venv
+ucid
+smallerimages
+thumbnails
