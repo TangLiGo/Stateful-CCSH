@@ -1,0 +1,105 @@
+frame level
+best_threshold= 0.45
+Precision=74.46%
+Recall=43.77%
+F1=55.13%
+IoU=38.05%
+video level
+best_threshold= 1.05
+Precision=80.08%
+Recall=81.64%
+F1=80.85%
+IoU=67.86%
+processing hds_ahash_sample_advanced_00_deletion
+frame level
+best_threshold= 0.4
+Precision=87.50%
+Recall=63.63%
+F1=73.68%
+IoU=58.33%
+video level
+best_threshold= 1.1500000000000001
+Precision=95.48%
+Recall=95.62%
+F1=95.55%
+IoU=91.48%
+processing hds_ahash_sample_advanced_01_deletion
+frame level
+best_threshold= 0.5
+Precision=93.91%
+Recall=80.37%
+F1=86.61%
+IoU=76.38%
+video level
+best_threshold= 1.6500000000000001
+Precision=99.84%
+Recall=99.84%
+F1=99.84%
+IoU=99.69%
+processing hds_ahash_sample_advanced_02_deletion
+frame level
+best_threshold= 0.5
+Precision=94.17%
+Recall=84.70%
+F1=89.19%
+IoU=80.48%
+video level
+best_threshold= 2.2
+Precision=99.92%
+Recall=99.92%
+F1=99.92%
+IoU=99.84%
+processing hds_ahash_sample_advanced_03_deletion
+frame level
+best_threshold= 0.55
+Precision=95.10%
+Recall=85.57%
+F1=90.08%
+IoU=81.95%
+video level
+best_threshold= 1.9500000000000002
+Precision=99.92%
+Recall=100.00%
+F1=99.96%
+IoU=99.92%
+processing hds_ahash_sample_advanced_04_deletion
+frame level
+best_threshold= 0.6000000000000001
+Precision=95.75%
+Recall=85.22%
+F1=90.18%
+IoU=82.11%
+video level
+best_threshold= 2.0
+Precision=99.77%
+Recall=100.00%
+F1=99.88%
+C:/Users/tangli/PycharmProjects/research2_lastversdion/CCSH_advanced/dataset4/b_authentication/dataset4_process_hd5.py:102: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+IoU=99.77%
+  pl.figure()
+processing hds_ahash_sample_advanced_05_deletion
+frame level
+best_threshold= 0.65
+Precision=96.45%
+Recall=84.65%
+F1=90.17%
+IoU=82.09%
+video level
+best_threshold= 2.4000000000000004
+Precision=99.92%
+Recall=100.00%
+F1=99.96%
+IoU=99.92%
+processing hds_ahash_sample_advanced_06_deletion
+frame level
+best_threshold= 0.65
+Precision=96.14%
+Recall=84.58%
+F1=89.99%
+IoU=81.80%
+video level
+best_threshold= 2.3000000000000003
+Precision=100.00%
+Recall=99.92%
+F1=99.96%
+IoU=99.92%

@@ -1,0 +1,288 @@
+processing hds_ahash_sample_advanced_00_deletion
+frame level
+best_threshold= 0.9
+Precision=81.35%
+Recall=74.60%
+F1=77.83%
+IoU=63.70%
+video level
+best_threshold= 0.9
+Precision=98.27%
+Recall=99.50%
+F1=98.88%
+IoU=97.79%
+processing hds_ahash_sample_advanced_00_insertion
+frame level
+best_threshold= 0.9
+Precision=81.07%
+Recall=75.68%
+F1=78.28%
+IoU=64.32%
+video level
+best_threshold= 1.05
+Precision=98.39%
+Recall=99.00%
+F1=98.69%
+IoU=97.42%
+processing hds_ahash_sample_advanced_01_deletion
+frame level
+best_threshold= 0.9500000000000001
+Precision=82.49%
+Recall=79.43%
+F1=80.93%
+IoU=67.97%
+video level
+best_threshold= 1.1
+Precision=98.51%
+Recall=99.12%
+F1=98.82%
+IoU=97.66%
+processing hds_ahash_sample_advanced_01_insertion
+frame level
+best_threshold= 0.75
+Precision=74.44%
+Recall=77.87%
+F1=76.12%
+IoU=61.44%
+video level
+best_threshold= 0.9500000000000001
+Precision=97.65%
+Recall=98.88%
+F1=98.26%
+IoU=96.58%
+processing hds_ahash_sample_advanced_02_deletion
+frame level
+best_threshold= 0.9500000000000001
+Precision=82.59%
+Recall=79.99%
+F1=81.27%
+IoU=68.45%
+video level
+best_threshold= 1.0
+Precision=99.13%
+Recall=99.25%
+F1=99.19%
+IoU=98.39%
+processing hds_ahash_sample_advanced_02_insertion
+frame level
+best_threshold= 0.9
+Precision=77.48%
+Recall=75.02%
+F1=76.23%
+IoU=61.59%
+video level
+best_threshold= 1.05
+Precision=98.75%
+Recall=98.50%
+F1=98.62%
+IoU=97.28%
+processing hds_ahash_sample_advanced_03_deletion
+frame level
+best_threshold= 1.05
+Precision=84.30%
+Recall=79.37%
+F1=81.76%
+IoU=69.15%
+video level
+best_threshold= 1.05
+Precision=98.88%
+Recall=99.12%
+F1=99.00%
+IoU=98.02%
+processing hds_ahash_sample_advanced_03_insertion
+frame level
+best_threshold= 0.8
+Precision=74.94%
+Recall=76.72%
+F1=75.82%
+IoU=61.06%
+video level
+best_threshold= 0.9500000000000001
+Precision=98.02%
+Recall=99.00%
+F1=98.51%
+IoU=97.06%
+processing hds_ahash_sample_advanced_04_deletion
+frame level
+best_threshold= 1.0
+Precision=83.65%
+Recall=80.43%
+F1=82.01%
+IoU=69.51%
+video level
+best_threshold= 1.0
+Precision=98.64%
+Recall=99.88%
+F1=99.25%
+IoU=98.52%
+processing hds_ahash_sample_advanced_04_insertion
+frame level
+best_threshold= 0.8
+Precision=74.43%
+Recall=76.03%
+F1=75.22%
+IoU=60.28%
+video level
+best_threshold= 1.0
+Precision=98.63%
+Recall=98.88%
+F1=98.75%
+IoU=97.53%
+C:/Users/tangli/PycharmProjects/research2_random/authentication/dataset3_process_hd.py:102: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  pl.figure()
+processing hds_ahash_sample_advanced_05_deletion
+frame level
+best_threshold= 1.05
+Precision=85.11%
+Recall=79.00%
+F1=81.94%
+IoU=69.41%
+video level
+best_threshold= 1.0
+Precision=98.88%
+Recall=99.38%
+F1=99.13%
+IoU=98.27%
+processing hds_ahash_sample_advanced_05_insertion
+frame level
+best_threshold= 0.8
+Precision=75.66%
+Recall=76.39%
+F1=76.02%
+IoU=61.32%
+video level
+best_threshold= 1.0
+Precision=98.40%
+Recall=99.62%
+F1=99.01%
+IoU=98.03%
+processing hds_ahash_sample_advanced_06_deletion
+frame level
+best_threshold= 1.05
+Precision=84.74%
+Recall=78.60%
+F1=81.56%
+IoU=68.86%
+video level
+best_threshold= 1.0
+Precision=98.40%
+Recall=99.75%
+F1=99.07%
+IoU=98.15%
+processing hds_ahash_sample_advanced_06_insertion
+frame level
+best_threshold= 0.8
+Precision=75.01%
+Recall=75.42%
+F1=75.21%
+IoU=60.27%
+video level
+best_threshold= 1.0
+Precision=98.51%
+Recall=99.12%
+F1=98.82%
+IoU=97.66%
+processing hds_ahash_sample_advanced_07_deletion
+frame level
+best_threshold= 0.9
+Precision=81.38%
+Recall=80.63%
+F1=81.01%
+IoU=68.08%
+video level
+best_threshold= 1.05
+Precision=98.64%
+Recall=99.38%
+F1=99.00%
+IoU=98.03%
+processing hds_ahash_sample_advanced_07_insertion
+frame level
+best_threshold= 0.8
+Precision=74.99%
+Recall=75.45%
+F1=75.22%
+IoU=60.28%
+video level
+best_threshold= 1.05
+Precision=98.63%
+Recall=98.88%
+F1=98.75%
+IoU=97.53%
+processing hds_ahash_sample_advanced_08_deletion
+frame level
+best_threshold= 1.05
+Precision=83.85%
+Recall=76.84%
+F1=80.19%
+IoU=66.93%
+video level
+best_threshold= 1.0
+Precision=98.39%
+Recall=99.00%
+F1=98.69%
+IoU=97.42%
+processing hds_ahash_sample_advanced_08_insertion
+frame level
+best_threshold= 0.8
+Precision=75.52%
+Recall=74.58%
+F1=75.05%
+IoU=60.06%
+video level
+best_threshold= 1.0
+Precision=97.78%
+Recall=99.25%
+F1=98.51%
+IoU=97.07%
+processing hds_ahash_sample_advanced_09_deletion
+frame level
+best_threshold= 1.05
+Precision=84.08%
+Recall=77.26%
+F1=80.53%
+IoU=67.40%
+video level
+best_threshold= 1.05
+Precision=99.00%
+Recall=99.12%
+F1=99.06%
+IoU=98.14%
+processing hds_ahash_sample_advanced_09_insertion
+frame level
+best_threshold= 0.8
+Precision=75.65%
+Recall=74.45%
+F1=75.05%
+IoU=60.06%
+video level
+best_threshold= 1.0
+Precision=98.51%
+Recall=98.88%
+F1=98.69%
+IoU=97.41%
+processing hds_ahash_sample_advanced_10_deletion
+frame level
+best_threshold= 0.9500000000000001
+Precision=82.19%
+Recall=77.90%
+F1=79.99%
+IoU=66.66%
+video level
+best_threshold= 1.05
+Precision=98.50%
+Recall=98.75%
+F1=98.63%
+IoU=97.29%
+processing hds_ahash_sample_advanced_10_insertion
+frame level
+best_threshold= 0.75
+Precision=73.78%
+Recall=75.69%
+F1=74.72%
+IoU=59.65%
+video level
+best_threshold= 1.0
+Precision=98.51%
+Recall=99.38%
+F1=98.94%
+IoU=97.91%

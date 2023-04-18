@@ -1,0 +1,100 @@
+frame level
+best_threshold= 0.45
+Precision=74.46%
+Recall=43.77%
+F1=55.13%
+IoU=38.05%
+video level
+best_threshold= 1.05
+Precision=80.08%
+Recall=81.64%
+F1=80.85%
+IoU=67.86%
+processing hds_ahash_sample_advanced_00_deletion
+frame level
+best_threshold= 0.30000000000000004
+Precision=81.45%
+Recall=68.58%
+F1=74.46%
+IoU=59.31%
+video level
+best_threshold= 1.25
+Precision=95.86%
+Recall=94.14%
+F1=94.99%
+IoU=90.47%
+processing hds_ahash_sample_advanced_01_deletion
+frame level
+best_threshold= 0.4
+Precision=89.37%
+Recall=72.13%
+F1=79.83%
+IoU=66.43%
+video level
+best_threshold= 1.35
+Precision=98.75%
+Recall=98.36%
+F1=98.55%
+IoU=97.15%
+processing hds_ahash_sample_advanced_02_deletion
+frame level
+best_threshold= 0.35000000000000003
+Precision=87.43%
+Recall=75.40%
+F1=80.97%
+IoU=68.03%
+video level
+best_threshold= 1.4500000000000002
+Precision=99.05%
+Recall=98.12%
+F1=98.59%
+IoU=97.21%
+processing hds_ahash_sample_advanced_03_deletion
+frame level
+best_threshold= 0.35000000000000003
+Precision=87.57%
+Recall=76.22%
+F1=81.50%
+IoU=68.78%
+video level
+best_threshold= 1.4500000000000002
+Precision=98.75%
+Recall=98.67%
+F1=98.71%
+IoU=97.45%
+processing hds_ahash_sample_advanced_04_deletion
+frame level
+best_threshold= 0.4
+Precision=90.11%
+Recall=73.68%
+F1=81.07%
+IoU=68.17%
+C:/Users/Tangli/PycharmProjects/test/dataset4_process_hd.py:102: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  pl.figure()
+video level
+best_threshold= 1.4000000000000001
+Precision=98.29%
+Recall=98.52%
+F1=98.40%
+IoU=96.85%
+C:/Users/Tangli/PycharmProjects/test/dataset4_process_hd.py:312: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  pl.figure()
+C:/Users/Tangli/PycharmProjects/test/dataset4_process_hd.py:324: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  pl.figure()
+processing hds_ahash_sample_advanced_05_deletion
+frame level
+C:/Users/Tangli/PycharmProjects/test/dataset4_process_hd.py:102: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  pl.figure()
+best_threshold= 0.4
+Precision=89.57%
+Recall=72.89%
+F1=80.37%
+IoU=67.18%
+C:/Users/Tangli/PycharmProjects/test/dataset4_process_hd.py:102: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  pl.figure()
+video level
+best_threshold= 1.4500000000000002
+Precision=98.43%
+Recall=98.05%
+F1=98.24%
+IoU=96.54%

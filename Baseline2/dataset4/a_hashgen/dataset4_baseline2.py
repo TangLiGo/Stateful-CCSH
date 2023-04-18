@@ -1,0 +1,238 @@
+import hashlib
+import numpy as np
+from moviepy.editor import VideoFileClip
+from skimage.transform import resize
+import imagehash
+from PIL import Image
+import cv2
+import distance
+import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use('TkAgg')
+import os
+import skimage
+import math
+import timeit
+from time import process_time
+def mean2(x):
+    y = np.sum(x) / np.size(x);
+    return y
+
+def corr2(a,b):
+    a = a - mean2(a)
+    b = b - mean2(b)
+
+    r = (a*b).sum() / math.sqrt((a*a).sum() * (b*b).sum());
+    return r
+def average_hash_self(img):
+
+    preprocess_resize_constants=(8,8)
+    img = skimage.transform.resize(np.array(img), preprocess_resize_constants)
+    img = skimage.color.rgb2gray(img)
+    mean_value=np.mean(img)
+    ahash_value=''
+    for i in range(preprocess_resize_constants[0]):
+        for j in range(preprocess_resize_constants[1]):
+            if img[i][j]>mean_value:
+                ahash_value=ahash_value+'1'
+            else:
+                ahash_value = ahash_value + '0'
+    return ahash_value
+
+def hash_compare(insertion_num,path1,path2,seq):
+
+    if seq==0:
+        video_path1 = path2
+        video_path2 = path1
+    else:
+        video_path1 = path1
+        video_path2 = path2
+   # print(path1,path2)
+   # print(video_path1,video_path2)
+    clip = cv2.VideoCapture(video_path1)
+    clip_forged = cv2.VideoCapture(video_path2)
+    imgs = []
+    imgs_forged = []
+    while True:
+        success, frame = clip.read()
+        if not success:
+            break
+        imgs.append(frame)
+    while True:
+        success, frame = clip_forged.read()
+        if not success:
+            break
+        imgs_forged.append(frame)
+    block_size = 16
+    height=imgs[0].shape[0]
+    width=imgs[0].shape[1]
+
+    row_block_range=int(height/block_size)
+    col_block_range=int(width/block_size)
+    frame_hash_values = []
+    frame_hash_values_forged=[]
+    sample_num=20
+    sample_insertion=insertion_num
+    sampling_lists=[]
+    img_i=0
+
+    for f in imgs:
+        width = f.shape[1]
+        height = f.shape[0]
+        row_block_range = int(height / block_size)
+        col_block_range = int(width / block_size)
+
+        cor_blocks=[]
+        sampling_list = []
+        sampling_list_new=[]
+        if img_i != 0:
+
+            sampling_list_new = np.random.randint(low=0, high=row_block_range * col_block_range, size=(sample_num,))
+            sampling_list_row_new = [int(sample_index / col_block_range) for sample_index in sampling_list_new]
+            sampling_list_col_new = [int(sample_index % col_block_range) for sample_index in sampling_list_new]
+            for i in range(sample_num):
+                block_temp=f[sampling_list_row_new[i] * block_size:(sampling_list_row_new[i] + 1) * block_size,
+                    sampling_list_col_new[i] * block_size:(sampling_list_col_new[i] + 1) * block_size]
+                f2=imgs[img_i-1]
+                block_temp2 = f2[sampling_list_row_new[i] * block_size:(sampling_list_row_new[i] + 1) * block_size,
+                             sampling_list_col_new[i] * block_size:(sampling_list_col_new[i] + 1) * block_size]
+                cor_blocks.append(corr2(block_temp, block_temp2))
+            sorted_blocks = sorted(cor_blocks,key=abs)
+            i=0
+            sampling_list.extend(np.random.randint(low=0, high=row_block_range*col_block_range ,
+                                            size=(sample_num-sample_insertion,)))
+            while (len(sampling_list) <sample_num):
+                index_temp = sampling_list_new[cor_blocks.index(sorted_blocks[i])]
+                #print(index_temp, cor_blocks[cor_blocks.index(sorted_blocks[i])])
+                cor_blocks[cor_blocks.index(sorted_blocks[i])] = 2
+
+                if index_temp in sampling_list:  # 此方法不好，对于block的corr2都差不多的部分frame而言 会sample0-19的block
+                    i += 1
+                    continue
+                i += 1
+                sampling_list.append(index_temp)
+
+           # print(sampling_list)
+        else:
+            sampling_list = np.random.randint(low=0, high=row_block_range*col_block_range, size=(sample_num,))
+
+       # print("col",col_block_range,row_block_range)
+        img_i+=1
+        sampling_lists.append(sampling_list)
+
+        sampling_list_row = [int(sample_index / col_block_range) for sample_index in sampling_list]
+        sampling_list_col = [int(sample_index % col_block_range) for sample_index in sampling_list]
+
+        blocks = []
+        for i in range(len(sampling_list_row)):
+            block = f[sampling_list_row[i] * block_size:(sampling_list_row[i] + 1) * block_size,
+                    sampling_list_col[i] * block_size:(sampling_list_col[i] + 1) * block_size]
+
+            blocks.extend(block)
+        last_img_blocks = blocks
+
+        cur_frame_hash = imagehash.average_hash(Image.fromarray(np.array(blocks)))
+        frame_hash_values.append((cur_frame_hash))
+    f_index = 0
+    for f in imgs_forged:
+        sampling_list_row = [int(sample_index / col_block_range) for sample_index in sampling_lists[f_index]]
+        sampling_list_col = [int(sample_index % col_block_range) for sample_index in sampling_lists[f_index]]
+        f_index += 1
+        blocks_forged = []
+        for i in range(len(sampling_list_row)):
+            block_forged = f[sampling_list_row[i] * block_size:(sampling_list_row[i] + 1) * block_size,
+                           sampling_list_col[i] * block_size:(sampling_list_col[i] + 1) * block_size]
+            # median_value=np.median(block)
+            blocks_forged.extend(block_forged)
+        cur_frame_hash = imagehash.average_hash(Image.fromarray(np.array(blocks_forged)))
+        frame_hash_values_forged.append((cur_frame_hash))
+
+    forged_frame_indices=[]
+    for i in range(min(len(frame_hash_values),len(frame_hash_values_forged))):
+        #print(frame_hash_values[i])
+        hd = frame_hash_values[i]-frame_hash_values_forged[i]
+        forged_frame_indices.append(hd)
+   # plt.figure()
+   # plt.plot(forged_frame_indices)
+   # plt.savefig(img_name)
+
+        # print(frame_hash_values)
+        # print(frame_hash_values_forged)
+ #   print("over", forged_frame_indices)
+    return forged_frame_indices
+def compare_hd(insertion_num,seq):
+    data_path0 = 'D:/TangLi/dataset4_revised/Lossless'
+    data_path1 = 'D:/TangLi/dataset4_revised/Lossy1'
+    data_path2 = 'D:/TangLi/dataset4_revised/Lossy2'
+    data_path3 = 'D:/TangLi/dataset4_revised/Lossy3'
+    data_path=[data_path0,data_path1,data_path2,data_path3]
+    original_videos=[[],[],[],[]]
+    forged_videos=[[],[],[],[]]
+    for i in range(len(data_path)):
+        path=data_path[i]
+        for file in os.listdir(path):
+            video_path = os.path.join(path, file)
+            video_path = video_path.replace('\\', '/')
+            if 'Real' in file:
+                original_videos[i].append(video_path)
+            elif 'Forged' in file:
+                forged_videos[i].append(video_path)
+    print("info", original_videos, forged_videos)
+    hds_forgery=[]
+    for i in range(len(original_videos)):
+        for j in range(len(forged_videos)):
+            sub_hds_forgery = []
+            for k in range(len(original_videos[i])):
+
+                sub_hds_forgery.append(hash_compare(insertion_num, original_videos[i][k], forged_videos[j][k],seq))
+            hds_forgery.append(sub_hds_forgery)
+
+    hds_compression=[]
+    for i in range(len(original_videos)-1):
+        for j in range(i+1,len(original_videos)):
+            sub_hds_compression = []
+            for k in range(len(original_videos[i])):
+
+                sub_hds_compression.append(hash_compare(insertion_num, original_videos[i][k], original_videos[j][k],seq))
+            hds_compression.append(sub_hds_compression)
+    for i in range(len(forged_videos)-1):
+        for j in range(i+1,len(forged_videos)):
+            sub_hds_compression = []
+            for k in range(len(forged_videos[i])):
+
+                sub_hds_compression.append(hash_compare(insertion_num,forged_videos[i][k], forged_videos[j][k],seq))
+            hds_compression.append(sub_hds_compression)
+   # print("hds_forgery=",hds_forgery)
+   # print("hds_compression=",hds_compression)
+    return hds_forgery, hds_compression
+
+
+
+
+insertion_nums=range(6)#[5078.234375, 5073.171875, 5081.953125, 5100.796875, 5290.890625]
+repeatTime=5
+time_costs=[]
+for insertion_num in insertion_nums:
+    time_start = process_time()
+    hds_forgery_mul = []
+    hds_compression_mul = []
+    for i in range(repeatTime):
+        temp_forgery, temp_compression = compare_hd(insertion_num,1)
+        hds_forgery_mul.extend(temp_forgery)
+        hds_compression_mul.extend(temp_compression)
+    hds_forgery_arr = np.array(hds_forgery_mul, dtype=object)
+    hds_compression_arr = np.array(hds_compression_mul, dtype=object)
+    if insertion_num<10:
+        np.save('data/dataset4/hds_ahash_sample_advanced_0' + str(insertion_num) + '_deletion.npy', hds_forgery_arr)
+        np.save('data/dataset4/hds_ahash_sample_advanced_0' + str(insertion_num) + '_deletion_compression.npy',
+                hds_compression_arr)
+    else:
+        np.save('data/dataset4/hds_ahash_sample_advanced_' + str(insertion_num) + '_deletion.npy', hds_forgery_arr)
+        np.save('data/dataset4/hds_ahash_sample_advanced_' + str(insertion_num) + '_deletion_compression.npy',
+                hds_compression_arr)
+
+    time_end=process_time()
+    time_costs.append(time_end-time_start)
+print("time costs:",time_costs)#[14473.65625, 14547.53125, 14646.734375, 14518.96875, 14650.296875, 14673.390625, 14668.265625, 14559.140625, 14523.765625, 14537.578125, 14551.546875]
+
+#[33315.1875, 33750.21875, 34358.53125, 34601.390625, 34518.609375, 34570.078125]

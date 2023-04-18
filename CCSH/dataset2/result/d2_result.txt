@@ -1,0 +1,90 @@
+frame level
+best_threshold= 1.1
+Precision=71.37%
+Recall=78.86%
+F1=74.93%
+IoU=59.91%
+video level
+best_threshold= 1.35
+Precision=93.65%
+Recall=92.19%
+F1=92.91%
+IoU=86.76%
+processing hds_ahash_sample_advanced_00_insertion
+frame level
+best_threshold= 1.25
+Precision=79.15%
+Recall=83.39%
+F1=81.22%
+IoU=68.37%
+video level
+best_threshold= 1.55
+Precision=97.29%
+Recall=95.23%
+F1=96.25%
+IoU=92.77%
+processing hds_ahash_sample_advanced_01_insertion
+frame level
+best_threshold= 1.4500000000000002
+Precision=80.34%
+Recall=82.89%
+F1=81.59%
+IoU=68.91%
+video level
+best_threshold= 1.55
+Precision=97.47%
+Recall=96.17%
+F1=96.81%
+IoU=93.83%
+processing hds_ahash_sample_advanced_02_insertion
+frame level
+best_threshold= 1.35
+Precision=78.97%
+Recall=84.41%
+F1=81.60%
+IoU=68.91%
+video level
+best_threshold= 1.6
+Precision=97.77%
+Recall=95.94%
+F1=96.85%
+IoU=93.88%
+processing hds_ahash_sample_advanced_03_insertion
+frame level
+best_threshold= 1.5
+Precision=80.18%
+Recall=82.99%
+F1=81.56%
+IoU=68.86%
+video level
+best_threshold= 1.7000000000000002
+Precision=97.45%
+Recall=95.55%
+F1=96.49%
+IoU=93.22%
+processing hds_ahash_sample_advanced_04_insertion
+frame level
+best_threshold= 1.4500000000000002
+Precision=79.31%
+Recall=83.33%
+F1=81.27%
+IoU=68.46%
+video level
+best_threshold= 1.8
+Precision=98.23%
+Recall=95.23%
+F1=96.71%
+IoU=93.63%
+processing hds_ahash_sample_advanced_05_insertion
+frame level
+best_threshold= 1.35
+Precision=77.80%
+Recall=84.29%
+F1=80.92%
+IoU=67.95%
+video level
+best_threshold= 1.55
+Precision=97.17%
+Recall=96.48%
+F1=96.82%
+IoU=93.84%
